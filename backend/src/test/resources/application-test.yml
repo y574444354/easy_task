@@ -1,0 +1,37 @@
+# 测试环境配置
+spring:
+  application:
+    name: easytask-backend-test
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+
+# JWT配置
+jwt:
+  secret: EasyTaskSecretKey2024ForJWTTokenGenerationAndValidationAndSecurityPurpose12345678
+  expiration: 86400000
+  header: Authorization
+  prefix: Bearer
+
+# AI API配置
+ai:
+  api:
+    base-url: https://api.openai.com/v1
+    key: test-api-key
+    timeout: 30000
+    max-retries: 3
+    model: gpt-3.5-turbo
+
+# Knife4j 配置
+knife4j:
+  enabled: true
