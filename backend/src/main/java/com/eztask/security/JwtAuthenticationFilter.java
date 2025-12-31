@@ -38,6 +38,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         String path = request.getRequestURI();
+        // 跳过认证相关路径
+        if (path.contains("/auth/")) {
+            return true;
+        }
         // 跳过 Swagger 相关路径
         return path.contains("/doc.html")
             || path.contains("/swagger-ui.html")

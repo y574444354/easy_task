@@ -48,7 +48,9 @@ service.interceptors.response.use(
 
       switch (status) {
         case 401:
-          ElMessage.error('未授权，请重新登录')
+          // 显示后端返回的错误信息，如果没有则显示默认消息
+          const errorMsg = data || '未授权，请重新登录'
+          ElMessage.error(errorMsg)
           const userStore = useUserStore()
           userStore.logout()
           router.push({ name: 'Login' })

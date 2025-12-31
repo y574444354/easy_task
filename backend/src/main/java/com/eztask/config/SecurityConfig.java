@@ -77,21 +77,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // 允许匿名访问的路径
                 .antMatchers(
-                        "/api/auth/**",
-                        "/api/favicon.ico",
-                        "/api/error",
-                        "/api/doc.html",
-                        "/api/swagger-resources/**",
-                        "/api/v2/api-docs/**",
-                        "/api/webjars/**",
-                        "/api/swagger-ui.html",
+                        "/auth/**",
+                        "/favicon.ico",
+                        "/error",
+                        "/doc.html",
                         "/swagger-resources/**",
                         "/v2/api-docs/**",
                         "/webjars/**",
-                        "/doc.html",
-                        "/swagger-ui.html",
-                        "/error",
-                        "/favicon.ico"
+                        "/swagger-ui.html"
                 ).permitAll()
                 // 其他所有请求都需要认证
                 .anyRequest().authenticated()

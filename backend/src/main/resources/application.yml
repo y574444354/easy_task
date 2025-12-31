@@ -12,6 +12,11 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
+  # SQL初始化配置
+  sql:
+    init:
+      mode: always
+
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
@@ -24,7 +29,7 @@ spring:
 
 # JWT配置
 jwt:
-  secret: EasyTaskSecretKey2024ForJWTTokenGenerationAndValidation
+  secret: EasyTaskSecretKey2024ForJWTTokenGenerationAndValidationThatIsSecureEnoughForHS512Algorithm
   expiration: 86400000 # 24小时（毫秒）
   header: Authorization
   prefix: Bearer
